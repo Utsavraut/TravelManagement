@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -32,7 +33,7 @@ public class Spring_security_config {
     protected SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/login","/user/**","/Register/**")
+                .requestMatchers("/login","/user/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -46,5 +47,9 @@ public class Spring_security_config {
                 .httpBasic();
 
         return httpSecurity.build();
+    }
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer(){
+        return (web) -> web.ignoring().requestMatchers("/css/**","/icon/**","/img/**", "/js/**");
     }
 }
