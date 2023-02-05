@@ -8,9 +8,10 @@ import java.util.List;
 
 public interface UserService {
     String saveUser(UserPojo userPojo);
-    List<User> fetchAll();
-    User fetchById(Integer id);
-
-    void deleteById(Integer id);
-
+//    List<User> fetchAll();
+//    User fetchById(Integer id);
+//
+//    void deleteById(Integer id);
+//
+    UserPojo findByEmail(String email);
 }
