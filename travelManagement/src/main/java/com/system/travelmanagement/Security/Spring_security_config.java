@@ -40,7 +40,7 @@ public class Spring_security_config {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/dashboard",true)
+                .defaultSuccessUrl("/user/index",true)
                 .usernameParameter("email")
                 .permitAll()
                 .and()
