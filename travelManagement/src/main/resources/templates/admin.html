@@ -1,15 +1,179 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-<!--    <meta name="viewport" content="width=, initial-scale=1.0">-->
-<!--    <title>Admin-dashboard</title>-->
-<!--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"-->
-<!--    rel="stylesheet">-->
-<!--    <link rel="stylesheet" href="css/admin.css">-->
-<!--</head>-->
-<!--<body>-->
-<!--    -->
-<!--</body>-->
-<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Admin-dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="img/logo.png">
+                    <h2>Ghum<span class="danger">Gham</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="admin.html" class="active">
+                <span class="material-icons-sharp">dashboard</span>
+                <h3>Dashboard</h3>
+                </a>
+                <a href="users.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+                <a href="">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>Bookings</h3>
+                </a>
+                <a href="">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>Add Destination</h3>
+                </a>
+                <a href="">
+                    <span class="material-icons-sharp">reviews</span>
+                    <h3>Reviews</h3>
+                    </a>
+                    <a href="">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                    </a>
+            </div>
+        </aside>
+        <!-- End of Aside -->
+        <main>
+            <h1>Dashboard</h1>
+            <div class="date">
+                <input type="date">
+            </div>
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-icons-sharp"> analytics </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Sales</h3>
+                            <h1>$25,000</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- End Of Sales -->
+            
+                <div class="expenses">
+                    <span class="material-icons-sharp"> bar_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Expenses</h3>
+                            <h1>$15,000</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>62%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- End Of Expenses-->
+                <div class="income">
+                    <span class="material-icons-sharp"> stacked_line_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Income</h3>
+                            <h1>$10,000</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>44%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- End Of Income -->
+            </div>
+            <!-------------End Of Insights ------------->
+            <div class="recent-orders">
+                <h2>Recent Booking</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Days</th>
+                        <th>Contact</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Utsav Raut</td>
+                        <td>raututsav35@gmail.com</td>
+                        <td>5</td>
+                        <td>9803873543</td>
+                    </tr>
+                    <tr>
+                        <td>Utsav Raut</td>
+                        <td>raututsav35@gmail.com</td>
+                        <td>5</td>
+                        <td>9803873543</td>
+                    </tr>
+                    <tr>
+                        <td>Utsav Raut</td>
+                        <td>raututsav35@gmail.com</td>
+                        <td>5</td>
+                        <td>9803873543</td>
+                    </tr>
+                    <tr>
+                        <td>Utsav Raut</td>
+                        <td>raututsav35@gmail.com</td>
+                        <td>5</td>
+                        <td>9803873543</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </main>
+        <!-- End Of Main -->
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu </span>
+                </button>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Utsav</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./img/profile-3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="./js/admin.js"></script> -->
+</body>
+</html>
