@@ -7,14 +7,14 @@
     <title>Admin-dashboard</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
     rel="stylesheet">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" th:href="@{~/css/admin.css}">
 </head>
 <body>
     <div class="container">
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="img/logo.png">
+                    <img th:src="@{~/img/logo.png}">
                     <h2>Ghum<span class="danger">Gham</span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -52,42 +52,24 @@
             <main>
                 <h1>User List</h1>
                 <div class="recent-orders">
-                    <h2>Recent Booking</h2>
+
                     <table>
                         <thead>
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Days</th>
-                            <th>Contact</th>
-                            <th></th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Utsav Raut</td>
-                            <td>raututsav35@gmail.com</td>
-                            <td>5</td>
-                            <td>9803873543</td>
+                        <tr th:each="user:${userlist}">
+                            <td th:text="${user.fullname}"></td>
+                            <td th:text="${user.email}"></td>
+                            <td>
+                                <a><button class="del-btn">Delete</button></a>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>Utsav Raut</td>
-                            <td>raututsav35@gmail.com</td>
-                            <td>5</td>
-                            <td>9803873543</td>
-                        </tr>
-                        <tr>
-                            <td>Utsav Raut</td>
-                            <td>raututsav35@gmail.com</td>
-                            <td>5</td>
-                            <td>9803873543</td>
-                        </tr>
-                        <tr>
-                            <td>Utsav Raut</td>
-                            <td>raututsav35@gmail.com</td>
-                            <td>5</td>
-                            <td>9803873543</td>
-                        </tr>
+
                     </tbody>
                     </table>
                 </div>
@@ -104,7 +86,7 @@
                         <small class="text-muted">Admin</small>
                     </div>
                     <div class="profile-photo">
-                        <img src="./img/profile-3.jpg" alt="">
+                        <img th:src="@{~/img/profile-3.jpg}" alt="">
                     </div>
                 </div>
             </div>

@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -34,5 +36,10 @@ public class UserServiceImpl implements UserService {
         User user = userRepo.findByEmail(email)
                 .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
         return new UserPojo(user);
+    }
+
+    @Override
+    public List<User> fetchAll() {
+        return this.userRepo.findAll();
     }
 }

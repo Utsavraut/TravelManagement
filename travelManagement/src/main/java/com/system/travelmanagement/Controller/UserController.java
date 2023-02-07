@@ -1,5 +1,6 @@
 package com.system.travelmanagement.Controller;
 
+import com.system.travelmanagement.Entity.User;
 import com.system.travelmanagement.Pojo.UserPojo;
 import com.system.travelmanagement.service.UserService;
 import jakarta.validation.Valid;
@@ -9,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -32,4 +35,13 @@ public class UserController {
     public String indexPage(){
         return "index";
     }
+
+    @GetMapping("/userss")
+    public String GetRevs(Model model) {
+        List<User> users = userService.fetchAll();
+        model.addAttribute("userlist", users);
+        return "users";
+    }
+
+
 }
