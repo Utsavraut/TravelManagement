@@ -42,4 +42,20 @@ public class UserServiceImpl implements UserService {
     public List<User> fetchAll() {
         return this.userRepo.findAll();
     }
+
+    @Override
+    public void deletebyid(Integer id) {
+        userRepo.deleteById(id);
+    }
+
+    @Override
+    public User fetchbyid(Integer id) {
+            User user=userRepo.findById(id).orElseThrow(()->
+                    new RuntimeException("notfound"));
+            user=User.builder().fullname(user.getFullname())
+                    .email(user.getEmail())
+                    .build();
+            return user;
+
+    }
 }

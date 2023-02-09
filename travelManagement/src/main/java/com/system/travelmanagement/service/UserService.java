@@ -16,4 +16,6 @@ public interface UserService {
     UserPojo findByEmail(String email);
 
     List<User> fetchAll();
+    void deletebyid(Integer id);
+    User fetchbyid(Integer id);
 }

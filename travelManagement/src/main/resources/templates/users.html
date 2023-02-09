@@ -22,11 +22,11 @@
                 </div>
             </div>
             <div class="sidebar">
-                <a href="admin.html" >
+                <a th:href="@{~/user/admin}" >
                 <span class="material-icons-sharp">dashboard</span>
                 <h3>Dashboard</h3>
                 </a>
-                <a href="" class="active">
+                <a th:href="@{~/user/userss}" class="active">
                     <span class="material-icons-sharp">person_outline</span>
                     <h3>Users</h3>
                 </a>
@@ -56,18 +56,21 @@
                     <table>
                         <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Action</th>
+<!--                            <th>Action</th>-->
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="user:${userlist}">
+                            <td th:text="${user.id}"></td>
                             <td th:text="${user.fullname}"></td>
                             <td th:text="${user.email}"></td>
-                            <td>
-                                <a><button class="del-btn">Delete</button></a>
-                            </td>
+<!--                            <td>-->
+<!--                                <a th:href="@{~/user/delete/}+${user.id}"><button class="del-btn">Delete</button></a>-->
+
+<!--                            </td>-->
                         </tr>
 
                     </tbody>
