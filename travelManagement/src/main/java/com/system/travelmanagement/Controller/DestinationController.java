@@ -1,18 +1,59 @@
 package com.system.travelmanagement.Controller;
 
+import com.system.travelmanagement.Pojo.DestinationPojo;
+import com.system.travelmanagement.service.Adddestination;
 import com.system.travelmanagement.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping
+@RequestMapping("/dest")
+
 public class DestinationController {
-    private final UserService userService;
+    private final Adddestination adddestination;
     @GetMapping("/add")
-    public String addPage(){
-        return "adddestination";
+    public String addPage(Model model){
+        model.addAttribute("desti",new DestinationPojo());
+        return "add";
+    }
+    @GetMapping("/gal")
+    public String gallery(){
+        return "gallery";
+    }
+    @PostMapping("/saveDest")
+    public String saveDest(DestinationPojo destinationPojo, BindingResult bindingResult, RedirectAttributes redirectAttributes) throws IOException {
+        Map<String, String> requestError = validateRequest(bindingResult);
+        if (requestError != null) {
+            redirectAttributes.addFlashAttribute("requestError", requestError);
+            return "redirect:/add";
+        }
+        adddestination.saveDestination(destinationPojo);
+        redirectAttributes.addFlashAttribute("successMsg", "User saved successfully");
+        return "redirect:/dest/add";
+    }
+    public Map<String, String> validateRequest(BindingResult bindingResult) {
+        if (!bindingResult.hasErrors()) {
+            return null;
+        }
+        Map<String, String> errors = new HashMap<>();
+        bindingResult.getAllErrors().forEach(error -> {
+            String fieldName = ((FieldError) error).getField();
+            String message = error.getDefaultMessage();
+            errors.put(fieldName, message);
+        });
+        return errors;
+
     }
 }
