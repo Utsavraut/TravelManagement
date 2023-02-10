@@ -1,5 +1,6 @@
 package com.system.travelmanagement.Controller;
 
+import com.system.travelmanagement.Entity.Destination;
 import com.system.travelmanagement.Pojo.DestinationPojo;
 import com.system.travelmanagement.service.Adddestination;
 import com.system.travelmanagement.service.UserService;
@@ -9,12 +10,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -55,5 +58,28 @@ public class DestinationController {
         });
         return errors;
 
+    }
+
+    @GetMapping("/dest")
+    public String GetDesti(Model model){
+        List<Destination> rooms = adddestination.fetchAll();
+        model.addAttribute("desti", rooms);
+
+        return  "destination";
+    }
+
+    @GetMapping("/destlist")
+    public String GetDestiList(Model model){
+        List<Destination> destinations = adddestination.fetchAll();
+        model.addAttribute("destis", destinations);
+
+        return  "destinationlist";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String DelUser(@PathVariable("id")Integer id){
+        adddestination.deletebyid(id);
+
+        return "redirect:/dest/destlist";
     }
 }

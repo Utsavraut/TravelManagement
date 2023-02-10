@@ -30,7 +30,7 @@ public class Destination {
     @Column()
     private String price;
 
-
+    @Column()
     private String image;
 
     @Transient

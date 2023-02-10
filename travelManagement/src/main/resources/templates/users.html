@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,9 +35,13 @@
                     <span class="material-icons-sharp">receipt_long</span>
                     <h3>Bookings</h3>
                 </a>
-                <a href="">
+                <a th:href="@{~/dest/add}">
                     <span class="material-icons-sharp">add</span>
                     <h3>Add Destination</h3>
+                </a>
+                <a th:href="@{~/dest/destlist}" >
+                    <span class="material-icons-sharp">list_alt</span>
+                    <h3>Destination List</h3>
                 </a>
                 <a href="">
                     <span class="material-icons-sharp">reviews</span>
@@ -67,10 +72,10 @@
                             <td th:text="${user.id}"></td>
                             <td th:text="${user.fullname}"></td>
                             <td th:text="${user.email}"></td>
-<!--                            <td>-->
-<!--                                <a th:href="@{~/user/delete/}+${user.id}"><button class="del-btn">Delete</button></a>-->
+                            <td>
+                                <a th:href="@{~/user/delete/}+${user.id}"><button class="del-btn">Delete</button></a>
 
-<!--                            </td>-->
+                            </td>
                         </tr>
 
                     </tbody>

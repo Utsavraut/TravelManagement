@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +16,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="img/logo.png" alt=" ">
+                <img th:src="@{~/img/logo.png}" alt=" ">
             </div>
             <ul id="menu_bx">
                 <li> <a href="index.html">Discover</a></li>
@@ -30,169 +32,167 @@
         <p>Choose your next Destination</p>
         <!-- <button ><a href="destination.html">See more</a></button> -->
         <div class="cards">
-            <div class="card">
-                <h3>Mustang-Nepal</h3>
+            <div class="card" th:each="des:${desti}">
+                <h3 th:text="${des.city}">-</h3>
+
                 <div class="img_text">
-                    <img src="img/MUSTANG1.jpg" alt="">
+                    <img th:src="'data:image/png;base64,'+${des.imageBase64}" alt="">
                     <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>
                 </div>
                 <div class="cont_bx">
                     <div class="price">
-                        <div class="heart_chat">
-                            <i class="bi bi-heart-fill"><span>86541</span></i>
-                            <i class="bi bi-chat-fill"><span>4562</span></i>
-                        </div>
+
                         <div class="info_price">
                             <!-- <a href="">More Info</a> -->
-                            <h4>$2000</h4>
+                            <h4 th:text="${des.price}"></h4>
                         </div>
                     </div>
                     <div class="days">Book <br>Now</div>
                 </div>
             </div>
-            <div class="card">
-                <h3>Burj Khalifa-UAE</h3>
-                <div class="img_text">
-                    <img src="img/burjkhlifa.jpg" alt="">
-                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>
-                </div>
-                <div class="cont_bx">
-                    <div class="price">
-                        <div class="heart_chat">
-                            <i class="bi bi-heart-fill"><span>86541</span></i>
-                            <i class="bi bi-chat-fill"><span>4562</span></i>
-                        </div>
-                        <div class="info_price">
-                            <!-- <a href="">More Info</a> -->
-                            <h4>$2000</h4>
-                        </div>
-                    </div>
-                    <div class="days">Book <br>Now</div>
-                </div>
-            </div>
-            <div class="card">
-                <h3>Paris-France</h3>
-                <div class="img_text">
-                    <img src="img/paris.jpg" alt="">
-                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>
-                </div>
-                <div class="cont_bx">
-                    <div class="price">
-                        <div class="heart_chat">
-                            <i class="bi bi-heart-fill"><span>86541</span></i>
-                            <i class="bi bi-chat-fill"><span>4562</span></i>
-                        </div>
-                        <div class="info_price">
-                            <!-- <a href="">More Info</a> -->
-                            <h4>$2000</h4>
-                        </div>
-                    </div>
-                    <div class="days">Book <br>Now</div>
-                </div>
-            </div>
-            <div class="card">
-                <h3>Bigben-UK</h3>
-                <div class="img_text">
-                    <img src="img/bigben.jpg" alt="">
-                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>
-                </div>
-                <div class="cont_bx">
-                    <div class="price">
-                        <div class="heart_chat">
-                            <i class="bi bi-heart-fill"><span>86541</span></i>
-                            <i class="bi bi-chat-fill"><span>4562</span></i>
-                        </div>
-                        <div class="info_price">
-                            <!-- <a href="">More Info</a> -->
-                            <h4>$2000</h4>
-                        </div>
-                    </div>
-                    <div class="days">Book <br>Now</div>
-                </div>
-            </div>
-    
-            <div class="card">
-                <h3>Amalfi coast-ITALY</h3>
-                <div class="img_text">
-                    <img src="img/amalfi.jpg" alt="">
-                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>
-                </div>
-                <div class="cont_bx">
-                    <div class="price">
-                        <div class="heart_chat">
-                            <i class="bi bi-heart-fill"><span>86541</span></i>
-                            <i class="bi bi-chat-fill"><span>4562</span></i>
-                        </div>
-                        <div class="info_price">
-                            <!-- <a href="">More Info</a> -->
-                            <h4>$2000</h4>
-                        </div>
-                    </div>
-                    <div class="days">Book <br>Now</div>
-                </div>
-            </div>
-            <div class="card">
-                <h3> Santorini-Greece</h3>
-                <div class="img_text">
-                    <img src="img/santorini.jpg" alt="">
-                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>
-                </div>
-                <div class="cont_bx">
-                    <div class="price">
-                        <div class="heart_chat">
-                            <i class="bi bi-heart-fill"><span>86541</span></i>
-                            <i class="bi bi-chat-fill"><span>4562</span></i>
-                        </div>
-                        <div class="info_price">
-                            <!-- <a href="">More Info</a> -->
-                            <h4>$2000</h4>
-                        </div>
-                    </div>
-                    <div class="days">Book <br>Now</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h3> Bali-Indonesia</h3>
-                <div class="img_text">
-                    <img src="img/bali.jpg" alt="">
-                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>
-                </div>
-                <div class="cont_bx">
-                    <div class="price">
-                        <div class="heart_chat">
-                            <i class="bi bi-heart-fill"><span>86541</span></i>
-                            <i class="bi bi-chat-fill"><span>4562</span></i>
-                        </div>
-                        <div class="info_price">
-                            <!-- <a href="">More Info</a> -->
-                            <h4>$2000</h4>
-                        </div>
-                    </div>
-                    <div class="days">Book <br>Now</div>
-                </div>
-            </div>
-    
-            <div class="card">
-                <h3> Tokyo-Japan</h3>
-                <div class="img_text">
-                    <img src="img/tokyo.jpeg" alt="">
-                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>
-                </div>
-                <div class="cont_bx">
-                    <div class="price">
-                        <div class="heart_chat">
-                            <i class="bi bi-heart-fill"><span>86541</span></i>
-                            <i class="bi bi-chat-fill"><span>4562</span></i>
-                        </div>
-                        <div class="info_price">
-                            <!-- <a href="">More Info</a> -->
-                            <h4>$2000</h4>
-                        </div>
-                    </div>
-                    <div class="days">Book <br>Now</div>
-                </div>
-            </div>
+<!--            <div class="card">-->
+<!--                <h3>Burj Khalifa-UAE</h3>-->
+<!--                <div class="img_text">-->
+<!--                    <img src="img/burjkhlifa.jpg" alt="">-->
+<!--                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>-->
+<!--                </div>-->
+<!--                <div class="cont_bx">-->
+<!--                    <div class="price">-->
+<!--                        <div class="heart_chat">-->
+<!--                            <i class="bi bi-heart-fill"><span>86541</span></i>-->
+<!--                            <i class="bi bi-chat-fill"><span>4562</span></i>-->
+<!--                        </div>-->
+<!--                        <div class="info_price">-->
+<!--                            &lt;!&ndash; <a href="">More Info</a> &ndash;&gt;-->
+<!--                            <h4>$2000</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="days">Book <br>Now</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card">-->
+<!--                <h3>Paris-France</h3>-->
+<!--                <div class="img_text">-->
+<!--                    <img src="img/paris.jpg" alt="">-->
+<!--                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>-->
+<!--                </div>-->
+<!--                <div class="cont_bx">-->
+<!--                    <div class="price">-->
+<!--                        <div class="heart_chat">-->
+<!--                            <i class="bi bi-heart-fill"><span>86541</span></i>-->
+<!--                            <i class="bi bi-chat-fill"><span>4562</span></i>-->
+<!--                        </div>-->
+<!--                        <div class="info_price">-->
+<!--                            &lt;!&ndash; <a href="">More Info</a> &ndash;&gt;-->
+<!--                            <h4>$2000</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="days">Book <br>Now</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card">-->
+<!--                <h3>Bigben-UK</h3>-->
+<!--                <div class="img_text">-->
+<!--                    <img src="img/bigben.jpg" alt="">-->
+<!--                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>-->
+<!--                </div>-->
+<!--                <div class="cont_bx">-->
+<!--                    <div class="price">-->
+<!--                        <div class="heart_chat">-->
+<!--                            <i class="bi bi-heart-fill"><span>86541</span></i>-->
+<!--                            <i class="bi bi-chat-fill"><span>4562</span></i>-->
+<!--                        </div>-->
+<!--                        <div class="info_price">-->
+<!--                            &lt;!&ndash; <a href="">More Info</a> &ndash;&gt;-->
+<!--                            <h4>$2000</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="days">Book <br>Now</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--    -->
+<!--            <div class="card">-->
+<!--                <h3>Amalfi coast-ITALY</h3>-->
+<!--                <div class="img_text">-->
+<!--                    <img src="img/amalfi.jpg" alt="">-->
+<!--                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>-->
+<!--                </div>-->
+<!--                <div class="cont_bx">-->
+<!--                    <div class="price">-->
+<!--                        <div class="heart_chat">-->
+<!--                            <i class="bi bi-heart-fill"><span>86541</span></i>-->
+<!--                            <i class="bi bi-chat-fill"><span>4562</span></i>-->
+<!--                        </div>-->
+<!--                        <div class="info_price">-->
+<!--                            &lt;!&ndash; <a href="">More Info</a> &ndash;&gt;-->
+<!--                            <h4>$2000</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="days">Book <br>Now</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card">-->
+<!--                <h3> Santorini-Greece</h3>-->
+<!--                <div class="img_text">-->
+<!--                    <img src="img/santorini.jpg" alt="">-->
+<!--                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>-->
+<!--                </div>-->
+<!--                <div class="cont_bx">-->
+<!--                    <div class="price">-->
+<!--                        <div class="heart_chat">-->
+<!--                            <i class="bi bi-heart-fill"><span>86541</span></i>-->
+<!--                            <i class="bi bi-chat-fill"><span>4562</span></i>-->
+<!--                        </div>-->
+<!--                        <div class="info_price">-->
+<!--                            &lt;!&ndash; <a href="">More Info</a> &ndash;&gt;-->
+<!--                            <h4>$2000</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="days">Book <br>Now</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            -->
+<!--            <div class="card">-->
+<!--                <h3> Bali-Indonesia</h3>-->
+<!--                <div class="img_text">-->
+<!--                    <img src="img/bali.jpg" alt="">-->
+<!--                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>-->
+<!--                </div>-->
+<!--                <div class="cont_bx">-->
+<!--                    <div class="price">-->
+<!--                        <div class="heart_chat">-->
+<!--                            <i class="bi bi-heart-fill"><span>86541</span></i>-->
+<!--                            <i class="bi bi-chat-fill"><span>4562</span></i>-->
+<!--                        </div>-->
+<!--                        <div class="info_price">-->
+<!--                            &lt;!&ndash; <a href="">More Info</a> &ndash;&gt;-->
+<!--                            <h4>$2000</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="days">Book <br>Now</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--    -->
+<!--            <div class="card">-->
+<!--                <h3> Tokyo-Japan</h3>-->
+<!--                <div class="img_text">-->
+<!--                    <img src="img/tokyo.jpeg" alt="">-->
+<!--                    <h4>Included AIr ticket, Hotel, Breakfast, Tour, Airport Transport</h4>-->
+<!--                </div>-->
+<!--                <div class="cont_bx">-->
+<!--                    <div class="price">-->
+<!--                        <div class="heart_chat">-->
+<!--                            <i class="bi bi-heart-fill"><span>86541</span></i>-->
+<!--                            <i class="bi bi-chat-fill"><span>4562</span></i>-->
+<!--                        </div>-->
+<!--                        <div class="info_price">-->
+<!--                            &lt;!&ndash; <a href="">More Info</a> &ndash;&gt;-->
+<!--                            <h4>$2000</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="days">Book <br>Now</div>-->
+<!--                </div>-->
+<!--            </div>-->
     
         </div>
     </div>
