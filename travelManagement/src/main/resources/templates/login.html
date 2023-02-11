@@ -19,7 +19,6 @@
             <img th:src="@{~/img/logo.png}" alt="">
             <h1>Login </h1>
 			<form class="login" th:action="@{/login}" method="post">
-                
 				<div class="login__field">
 					<i class="login__icon fas fa-envelope"></i>
 					<input type="text" class="login__input" placeholder=" Email" name="email">
@@ -29,21 +28,20 @@
 					<input type="password" class="login__input" placeholder="Password" name="password">
 					<i class="fas fa-eye-slash"></i>
 				</div>
+
 				<button class="button login__submit">
 					<span class="button__text">Log In Now</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
 			</form>
 			<div class="social-login">
-				<h3>log in via</h3>
-				<div class="social-icons">
-					<a href="#" class="social-login__icon fab fa-google"></a>
-					<a href="#" class="social-login__icon fab fa-facebook"></a>
-					<a href="#" class="social-login__icon fab fa-github"></a>
-				</div>
                 <div class="signup">
                 <h4>New Here?</h4>
-                <button class="signups"><a href="registration.html">Sign Up</button></a>
+                <button class="signups"><a th:href="@{~/user/register}">Sign Up</button></a>
+					<h5>Forgot Pasword?</h5>
+					<button class="signups"><a th:href="@{~/user/forgotpassword}">forgot password</button></a>
+
+
             </div>
 			</div>
             

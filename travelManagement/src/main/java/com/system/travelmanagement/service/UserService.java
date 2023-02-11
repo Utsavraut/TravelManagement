@@ -20,5 +20,7 @@ public interface UserService {
     void deletebyid(Integer id);
     User fetchbyid(Integer id);
 
+    void processPasswordResetRequest(String email);
 
+    void sendEmail();
 }

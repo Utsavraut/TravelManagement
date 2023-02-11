@@ -44,7 +44,8 @@
                             <h4 th:text="${des.price}"></h4>
                         </div>
                     </div>
-                    <div class="days">Book <br>Now</div>
+                   <a th:href="@{~/book/books/}+${desti
+                   .id}"> <button class="days">Book <br>Now</button></a>
                 </div>
             </div>
         </div>
