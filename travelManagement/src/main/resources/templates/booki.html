@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -13,20 +13,20 @@
    
     <div class="booking-form">
         <h2>Book Your Trip</h2>
-        <form th:method="post" th:action="@{/book/savebookss}" th:object="${bookingss}">
+        <form th:method="post" th:action="@{~/book/savebookss}" th:object="${bookingss}">
             <input  type="text" hidden="hidden" name="userId" th:value="${userlog.id}">
             <input  type="text" hidden="hidden" name="roomId" th:value="${dest.id}">
           <div class="form-group">
             <label for="departure-date">Departure Date:</label>
-            <input type="date" id="departure-date" name="departure-date" required th:field="*{checkin}">
+            <input type="date" id="departure-date" name="checkin" required th:field="*{checkin}">
           </div>
           <div class="form-group">
             <label for="return-date">Return Date:</label>
-            <input type="date" id="return-date" name="return-date" required th:field="*{checkout}">
+            <input type="date" id="return-date" name="checkout" required th:field="*{checkout}">
           </div>
           <div class="form-group">
             <label for="num-travelers">Number of Travelers:</label>
-            <input type="number" id="num-travelers" name="num-travelers" th:field="*{people}">
+            <input type="number" id="num-travelers" name="people" th:field="*{people}">
           </div>
           <div class="form-group">
             <button type="submit">Book Now</button>

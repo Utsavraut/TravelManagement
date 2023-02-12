@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.security.Principal;
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -27,11 +26,11 @@ public class BookingController {
         model.addAttribute("dest",new DestinationPojo(desttt));
         model.addAttribute("bookingss" ,new BookPojo());
         model.addAttribute("userlog",userService.findByEmail(principal.getName()));
-        return "/booki";
+        return "booki";
     }
     @PostMapping("/savebook")
     public String bookDesti(@Valid BookPojo bookingPojo) {
         bookService.save(bookingPojo);
-        return "destination";
+        return "redirect:/dest/dest";
     }
 }
