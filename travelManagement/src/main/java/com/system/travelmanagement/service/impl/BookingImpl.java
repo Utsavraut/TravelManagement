@@ -20,9 +20,9 @@ private final BookRepo bookRepo;
     @Override
     public String save(BookPojo bookPojo) {
         Book book=new Book();
-        book.setCheckin(book.getCheckin());
-        book.setCheckout(book.getCheckout());
-        book.setPeople(book.getPeople());
+        book.setCheckin(bookPojo.getCheckin());
+        book.setCheckout(bookPojo.getCheckout());
+        book.setPeople(bookPojo.getPeople());
         book.setUserId(userRepo.findById(bookPojo.getUserId()).orElseThrow());
         book.setDestId(destinationRepo.findById(bookPojo.getRoomId()).orElseThrow());
         bookRepo.save(book);

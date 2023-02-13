@@ -59,15 +59,15 @@
             <form th:method="post" th:action="@{~/dest/saveDest}" th:object="${desti}" enctype="multipart/form-data">
                 <div class="form-group" >
                   <label for="name">City:</label>
-                  <input type="text" id="name" name="name" placeholder="Enter your Name" th:field="*{city}" >
+                  <input type="text" id="name" name="name" placeholder="Enter the country" th:field="*{city}" >
                 </div>
                 <div class="form-group">
                   <label for="email">Country:</label>
-                  <input type="text" id="email" name="email" placeholder="Enter your Email" th:field="*{country}" >
+                  <input type="text" id="email" name="email" placeholder="Enter the city" th:field="*{country}" >
                 </div>
                 <div class="form-group">
                     <label for="email">Price:</label>
-                    <input type="text" id="email" name="email" placeholder="Enter your Email" th:field="*{price}">
+                    <input type="text" id="email" name="email" placeholder="Enter the Price" th:field="*{price}">
                   </div>
                 <div class="form-group1">
                   <label for="file">Image:</label>

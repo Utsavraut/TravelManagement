@@ -26,7 +26,7 @@ public class BookingController {
         model.addAttribute("dest",new DestinationPojo(desttt));
         model.addAttribute("bookingss" ,new BookPojo());
         model.addAttribute("userlog",userService.findByEmail(principal.getName()));
-        return "booki";
+        return "form";
     }
     @PostMapping("/savebook")
     public String bookDesti(@Valid BookPojo bookingPojo) {

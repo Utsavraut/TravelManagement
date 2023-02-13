@@ -1,8 +1,9 @@
 main {
     flex: 1;
     padding: 2rem;
-    background-color: rgb(255, 255, 255);
+    background-color: #ccbd1f;
     height: 80%;
+    width: 50%;
     margin-top: 10%;
     margin-left: 20% ;
     border-radius: 40px;
