@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
   <head>
   	<title>Contact </title>
     <meta charset="utf-8">
@@ -24,7 +26,7 @@
 			<header>
 				<nav>
 					<div class="logo">
-						<img src="img/logo.png" alt=" ">
+						<img th:src="@{~/img/logo.png}" alt=" ">
 					</div>
 					<ul id="menu_bx">
 						<li> <a href="index.html">Discover</a></li>
@@ -47,22 +49,22 @@
 									<h3 class="mb-4">Write us</h3>
 									<div id="form-message-warning" class="mb-4"></div> 
 				      	
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+									<form th:method="post" th:action="@{/contact/savecont}" th:object="${conts}">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name" th:field="*{name}" th:value="${conts.name}">
 												</div>
 											</div>
 											<div class="col-md-12"> 
 												<div class="form-group">
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email" th:field="*{email}" th:value="${conts.email}">
 												</div>
 											</div>
 										
 											<div class="col-md-12">
 												<div class="form-group">
-													<textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message"></textarea>
+													<textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message" th:field="*{messgae}" th:value="${conts.messgae}"></textarea>
 												</div>
 											</div>
 											<div class="col-md-12">
@@ -92,7 +94,7 @@
 				        			<span class="fa fa-phone"></span>
 				        		</div>
 				        		<div class="text pl-3">
-					            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+					            <p><span>Phone:</span> +977-9803873543</a></p>
 					          </div>
 				          </div>
 				        	<div class="dbox w-100 d-flex align-items-center">
@@ -100,7 +102,7 @@
 				        			<span class="fa fa-paper-plane"></span>
 				        		</div>
 				        		<div class="text pl-3">
-					            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+					            <p><span>Email:</span> raututsav35@gmail.com</a></p>
 					          </div>
 				          </div>
 				        	<div class="dbox w-100 d-flex align-items-center">
@@ -108,7 +110,7 @@
 				        			<span class="fa fa-globe"></span>
 				        		</div>
 				        		<div class="text pl-3">
-					            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+					            <p><span>Website:</span>GhumGham.com</a></p>
 					          </div>
 				          </div>
 			          </div>

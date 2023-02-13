@@ -57,10 +57,6 @@ public class UserController {
         return ("forget");
     }
 
-    @GetMapping("/edit")
-    public String iEdit(){
-        return "edit";
-    }
 
     @PostMapping("/changepassword")
     public String changepassword(@RequestParam("email") String email, Model model, @Valid UserPojo userPojo){

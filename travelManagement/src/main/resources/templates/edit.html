@@ -15,24 +15,25 @@
 <div class="container">
   <main>
     <h1>Edit</h1>
-    <form  enctype="multipart/form-data">
+    <form  th:method="post" th:action="@{~/dest/saveDest}" th:object="${destinations}" enctype="multipart/form-data" >
+      <input class="field" type="text" hidden placeholder="UserId..."  th:field="*{id}" th:value="${clickeddest.getId()}" />
       <div class="form-group" >
         <label for="name">City:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your Name"  >
+        <input type="text" id="name"  name="name"  placeholder="Enter the city" th:field="*{city}" th:value="${clickeddest.getCity()}">
       </div>
       <div class="form-group">
         <label for="email">Country:</label>
-        <input type="text" id="email" name="email" placeholder="Enter your Email" >
+        <input type="text" id="email" name="email"  placeholder="Enter the country" th:field="*{country}" th:value="${clickeddest.getCountry()}">
       </div>
       <div class="form-group">
         <label for="email">Price:</label>
-        <input type="text" id="email" name="email" placeholder="Enter your Email" >
+        <input type="text" id="email" name="email"  placeholder="Enter the price" th:field="*{price}" th:value="${clickeddest.getPrice()}">
       </div>
       <div class="form-group1">
         <label for="file">Image:</label>
-        <input type="file" id="file" name="file" >
+        <input type="file" id="file" name="file" th:field="*{image}" th:value="${clickeddest.getImage()}" >
       </div>
-      <button type="submit">Edit</button>
+      <a th:href="@{~/dest/edit}+${clickeddest.id}"><button type="submit">Edit</button></a>
     </form>
 
   </main>

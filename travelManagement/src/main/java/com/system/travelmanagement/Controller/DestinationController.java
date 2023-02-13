@@ -57,14 +57,12 @@ public class DestinationController {
             errors.put(fieldName, message);
         });
         return errors;
-
     }
 
     @GetMapping("/dest")
     public String GetDesti(Model model){
         List<Destination> rooms = adddestination.fetchAll();
         model.addAttribute("desti", rooms);
-
         return  "destination";
     }
 
@@ -72,14 +70,25 @@ public class DestinationController {
     public String GetDestiList(Model model){
         List<Destination> destinations = adddestination.fetchAll();
         model.addAttribute("destis", destinations);
-
         return  "destinationlist";
     }
 
     @GetMapping("/delete/{id}")
     public String DelUser(@PathVariable("id")Integer id){
         adddestination.deletebyid(id);
-
         return "redirect:/dest/destlist";
+    }
+    @GetMapping("/edit/{id}")
+    public String editDest(@PathVariable("id") Integer id, Model model){
+        Destination destination = adddestination.fetchById(id);
+        model.addAttribute("clickeddest", new DestinationPojo(destination));
+        return "redirect:/dest/destlist";
+    }
+    @GetMapping("/products/{id}")
+    public String getDestProgile(@PathVariable("id") Integer id, Model model ){
+        Destination destination = adddestination.fetchById(id);
+        model.addAttribute("destinations", new DestinationPojo(destination));
+        model.addAttribute("clickeddest", destination);
+        return "edit";
     }
 }

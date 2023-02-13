@@ -10,5 +10,5 @@ public interface Adddestination {
     DestinationPojo saveDestination(DestinationPojo destinationPojo) throws IOException;
     List<Destination> fetchAll();
     void deletebyid(Integer id);
-    Destination fetchById(Integer id);
+   Destination fetchById(Integer id);
 }
