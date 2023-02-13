@@ -1,5 +1,7 @@
 package com.system.travelmanagement.Controller;
 
+import com.system.travelmanagement.Entity.Contact;
+import com.system.travelmanagement.Entity.User;
 import com.system.travelmanagement.Pojo.ContactPojo;
 import com.system.travelmanagement.service.ContactService;
 import jakarta.validation.Valid;
@@ -9,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,5 +28,12 @@ public class ContactController {
     public String bookDesti(@Valid ContactPojo contactPojo) {
         contactService.save(contactPojo);
         return "redirect:/contact/cont";
+    }
+
+    @GetMapping("/conlis")
+    public String GetRevs(Model model) {
+        List<Contact> contact = contactService.fetchAll();
+        model.addAttribute("contactlist", contact);
+        return "contactlist";
     }
 }

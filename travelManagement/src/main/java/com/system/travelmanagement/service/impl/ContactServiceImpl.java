@@ -7,6 +7,8 @@ import com.system.travelmanagement.service.ContactService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ContactServiceImpl implements ContactService {
@@ -22,5 +24,10 @@ public class ContactServiceImpl implements ContactService {
         contact.setMessage(contactPojo.getMessgae());
         contactRepo.save(contact);
         return "Created";
+    }
+
+    @Override
+    public List<Contact> fetchAll() {
+        return this.contactRepo.findAll()  ;
     }
 }

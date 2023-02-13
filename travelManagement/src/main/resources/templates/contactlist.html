@@ -39,7 +39,7 @@
         <span class="material-icons-sharp">add</span>
         <h3>Add Destination</h3>
       </a>
-      <a th:href="@{~/dest/destlist}" class="active">
+      <a th:href="@{~/dest/destlist}" >
         <span class="material-icons-sharp">list_alt</span>
         <h3>Destination List</h3>
       </a>
@@ -47,7 +47,7 @@
         <span class="material-icons-sharp">reviews</span>
         <h3>Reviews</h3>
       </a>
-      <a th:href="@{~/contact/conlis}" >
+      <a th:href="@{~/contact/conlis}" class="active">
         <span class="material-icons-sharp">contacts</span>
         <h3>Contacts</h3>
       </a>
@@ -57,30 +57,28 @@
       </a>
     </div>
   </aside>
+  <!-- End of Aside -->
   <main>
-    <h1>Destination</h1>
+    <h1>Contact List</h1>
     <div class="recent-orders">
 
       <table>
         <thead>
         <tr>
           <th>Id</th>
-          <th>City</th>
-          <th>Country</th>
-          <th>Price</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
           <!--                            <th>Action</th>-->
         </tr>
         </thead>
         <tbody>
-        <tr th:each="des:${destis}">
-          <td th:text="${des.id}"></td>
-          <td th:text="${des.city}"></td>
-          <td th:text="${des.country}"></td>
-          <td th:text="${des.price}"></td>
-
-          <td>
-            <a th:href="@{~/dest/delete/}+${des.id}"><button class="del-btn">Delete</button></a>
-            <a th:href="@{~/dest/products}+${des.id}"><button class="del-btn" >Edit</button></a>
+        <tr th:each="con:${contactlist}">
+          <td th:text="${con.id}"></td>
+          <td th:text="${con.name}"></td>
+          <td th:text="${con.email}"></td>
+          <td th:text="${con.message}">
+            <a><button class="del-btn">Delete</button></a>
 
           </td>
         </tr>
@@ -106,8 +104,6 @@
       </div>
     </div>
   </div>
-
-
 </div>
 </body>
 </html>
