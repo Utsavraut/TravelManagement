@@ -30,16 +30,16 @@
               <input  type="text" hidden="hidden" name="roomId" th:value="${dest.id}">
             <div class="all">
             <div class="form-group">
-              <label for="departure-date">Departure Date:</label>
+              <label for="departure-date">Departure:</label>
               <input type="date" id="departure-date" required th:field="*{checkin}">
             </div>
             <div class="form-group">
-              <label for="return-date">Return Date:</label>
+              <label for="return-date">Arrival:</label>
               <input type="date" id="return-date" required th:field="*{checkout}">
             </div>
             <div class="form-group">
-              <label for="num-travelers">Number of Travelers:</label>
-              <input type="text" id="num-travelers"  placeholder="No of people" th:field="*{people}">
+              <label for="num-travelers">Contact:</label>
+              <input type="text" id="num-travelers"  placeholder="Phone Number" th:field="*{people}">
             </div>
             <div class="form-group">
               <button type="submit">Book Now</button>

@@ -32,7 +32,7 @@
                     <span class="material-icons-sharp">person_outline</span>
                     <h3>Users</h3>
                 </a>
-                <a href="">
+                <a th:href="@{~/book/boook}" >
                     <span class="material-icons-sharp">receipt_long</span>
                     <h3>Bookings</h3>
                 </a>
@@ -63,11 +63,11 @@
             <form th:method="post" th:action="@{~/dest/saveDest}" th:object="${desti}" enctype="multipart/form-data">
                 <div class="form-group" >
                   <label for="name">City:</label>
-                  <input type="text" id="name" name="name" placeholder="Enter the country" th:field="*{city}" >
+                  <input type="text" id="name" name="name" placeholder="Enter the city" th:field="*{city}" >
                 </div>
                 <div class="form-group">
                   <label for="email">Country:</label>
-                  <input type="text" id="email" name="email" placeholder="Enter the city" th:field="*{country}" >
+                  <input type="text" id="email" name="email" placeholder="Enter the country" th:field="*{country}" >
                 </div>
                 <div class="form-group">
                     <label for="email">Price:</label>

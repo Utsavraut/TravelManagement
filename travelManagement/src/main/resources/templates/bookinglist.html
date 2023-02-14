@@ -31,7 +31,7 @@
         <span class="material-icons-sharp">person_outline</span>
         <h3>Users</h3>
       </a>
-      <a href="" class="active">
+      <a th:href="@{~/book/boook}" class="active">
         <span class="material-icons-sharp">receipt_long</span>
         <h3>Bookings</h3>
       </a>
@@ -65,27 +65,30 @@
       <table>
         <thead>
         <tr>
-          <th>UserName</th>
-          <th>Destination Name</th>
           <th>Booking Id</th>
-          <th>CheckIn</th>
-          <th>CheckOut</th>
-          <th>People</th>
+          <th>User Name</th>
+          <th>Destination Name</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Contact</th>
+          <th>Price</th>
           <!--                            <th>Action</th>-->
         </tr>
         </thead>
         <tbody>
         <tr th:each="book:${booklist}">
-          <td th:text="${book.userId.fullname}"></td>
-          <td th:text="${book.destId.city}"></td>
           <td th:text="${book.id}"></td>
+          <td th:text="${book.userId.fullname}"></td>
+          <td th:text="${book.destId.city}+'-'+${book.destId.country}"></td>
           <td th:text="${book.checkin}"></td>
           <td th:text="${book.checkout}"></td>
           <td th:text="${book.people}"></td>
-          <td>
-            <a ><button class="del-btn">Delete</button></a>
+          <td th:text="${book.destId.price}"></td>
 
-          </td>
+<!--          <td>-->
+<!--            <a ><button class="del-btn">Delete</button></a>-->
+
+<!--          </td>-->
         </tr>
 
         </tbody>
