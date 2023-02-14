@@ -9,9 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "contact", uniqueConstraints = {
-        @UniqueConstraint(name = "hrs_user_email", columnNames = "email")
-})
+@Table(name = "contact")
 public class Contact {
     @Id
     @SequenceGenerator(name = "hrs_user_seq_gen", sequenceName = "pms_user_id_seq", allocationSize = 1)

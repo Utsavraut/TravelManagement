@@ -81,7 +81,7 @@ public class DestinationController {
     @GetMapping("/edit/{id}")
     public String editDest(@PathVariable("id") Integer id, Model model){
         Destination destination = adddestination.fetchById(id);
-        model.addAttribute("clickeddest", new DestinationPojo(destination));
+        model.addAttribute("clickedddest", new DestinationPojo(destination));
         return "redirect:/dest/destlist";
     }
     @GetMapping("/products/{id}")

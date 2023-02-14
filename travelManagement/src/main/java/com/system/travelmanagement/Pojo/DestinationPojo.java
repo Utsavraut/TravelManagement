@@ -28,6 +28,7 @@ public class DestinationPojo {
         this.id=destination.getId();
         this.city= destination.getCity();
         this.country=destination.getCountry();
+        this.price=destination.getPrice();
 
     }
 
