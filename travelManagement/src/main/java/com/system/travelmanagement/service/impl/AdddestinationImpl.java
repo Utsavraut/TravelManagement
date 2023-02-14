@@ -94,7 +94,6 @@ public class AdddestinationImpl implements Adddestination {
                 .country(desti.getCountry())
                 .price(desti.getPrice())
                 .imageBase64(getImageBase64(desti.getImage()))
-
                 .build();
         return desti;
     }

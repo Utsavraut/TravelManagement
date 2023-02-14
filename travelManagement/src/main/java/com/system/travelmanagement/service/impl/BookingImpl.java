@@ -8,6 +8,8 @@ import com.system.travelmanagement.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class   BookingImpl implements BookService {
@@ -27,5 +29,15 @@ private final BookRepo bookRepo;
         book.setDestId(destinationRepo.findById(bookPojo.getRoomId()).orElseThrow());
         bookRepo.save(book);
         return "Created";
+    }
+
+    @Override
+    public List<Book> fetchAll() {
+        return this.bookRepo.findAll();
+    }
+
+    @Override
+    public void deletebyid(Integer id) {
+        bookRepo.deleteById(id);
     }
 }
