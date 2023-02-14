@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
     rel="stylesheet">
     <link rel="stylesheet" th:href="@{~/css/admin.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{~/img/logo.png}">
+
 </head>
 <body>
     <div class="container">
@@ -76,10 +78,10 @@
                             <td th:text="${user.id}"></td>
                             <td th:text="${user.fullname}"></td>
                             <td th:text="${user.email}"></td>
-                            <td>
-                                <a th:href="@{~/user/delete/}+${user.id}"><button class="del-btn">Delete</button></a>
+<!--                            <td>-->
+<!--                                <a th:href="@{~/user/delete/}+${user.id}"><button class="del-btn">Delete</button></a>-->
 
-                            </td>
+<!--                            </td>-->
                         </tr>
 
                     </tbody>
