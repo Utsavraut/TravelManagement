@@ -6,16 +6,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
-    <link rel="stylesheet" href="css/bill.css" />
+    <link rel="stylesheet" th:href="@{~/css/bill.css}" />
     <link rel="shortcut icon" type="x-icon" th:href="@{~/img/logo.png}">
-    <title>Customer Invoice: GhumGham</title>
+    <title>Customer Invoice:GhumGham</title>
   </head>
   <body>
     <div class="my-5 page" size="A4">
       <div class="p-5">
         <section class="top-content bb d-flex justify-content-between">
           <div class="logo">
-           <img src="img/logo.png" alt="not" class="img-fluid" />
+           <img th:src="@{~/img/logo.png}" alt="not" class="img-fluid" />
             <p> Visit again !!! </p>
           </div>
           <div class="top-left">
