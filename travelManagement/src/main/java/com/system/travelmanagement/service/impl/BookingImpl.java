@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -39,5 +40,28 @@ private final BookRepo bookRepo;
     @Override
     public void deletebyid(Integer id) {
         bookRepo.deleteById(id);
+    }
+
+    @Override
+    public List findBookingById(Integer id) {
+        return findAllInList(bookRepo.findBookingById(id));
+    }
+
+    public List<Book> findAllInList(List<Book> list) {
+        Stream<Book> allBooking = list.stream().map(booking ->
+                Book.builder()
+                        .id(booking.getId())
+                        .checkin(booking.getCheckin())
+                        .checkout(booking.getCheckout())
+                        .People(booking.getPeople())
+                        .userId(booking.getUserId())
+                        .destId(booking.getDestId())
+                        .build());
+        list = allBooking.toList();
+        return list;
+    }
+    @Override
+    public Book fetchById(Integer id) {
+        return bookRepo.findById(id).orElseThrow(() -> new RuntimeException("Couldnot find"));
     }
 }

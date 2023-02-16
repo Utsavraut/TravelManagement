@@ -18,8 +18,10 @@
         <ul id="menu_bx">
             <li> <a th:href="@{~/user/index}">Discover</a></li>
             <li> <a href="destination.html">Destinations</a></li>
-            <li> <a href='#about';>About Us</a></li>
-            <li> <a href="registration.html">Register</a></li>
+            <li> <a href='#about';>Contact Us</a></li>
+            <li> <a href="registration.html">Gallery</a></li>
+            <li> <a th:href="@{~/book/booked/}+${userdata.id}">My Bookings</a></li>
+            <li> <a th:text="${userdata.getFullname()}"> </a></li>
         </ul>
         <i class="bi bi-three-dots"></i>
       </nav>  

@@ -1,0 +1,31 @@
+main h1{
+    text-align: center;
+}
+
+main .recent-orders table{
+    background: var(--color-white);
+    width: 80%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+main .recent-orders table:hover{
+    box-shadow: none;
+}
+main table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+main table .del-btn{
+    background: var(--color-primary);
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 10px 10px;
+}
+
+main table tbody tr:last-child td{
+    border: none;
+}

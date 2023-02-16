@@ -1,7 +1,6 @@
 package com.system.travelmanagement.Controller;
 import com.system.travelmanagement.Entity.Book;
 import com.system.travelmanagement.Entity.Destination;
-import com.system.travelmanagement.Entity.User;
 import com.system.travelmanagement.Pojo.BookPojo;
 import com.system.travelmanagement.Pojo.DestinationPojo;
 import com.system.travelmanagement.service.Adddestination;
@@ -51,10 +50,16 @@ public class BookingController {
                 .build()
         ));
         return "bookinglist";
-
     }
 
+    @GetMapping("/booked/{id}")
+    public String fetchAllbook(@PathVariable("id") Integer id, Model model , Principal principal){
+        List<Book> booking= bookService.findBookingById(id);
+        model.addAttribute("books",booking);
+        model.addAttribute("userdata",userService.findByEmail(principal.getName()));
 
+        return "MyBookings";
+    }
     @GetMapping("/pay")
     public String payment(){
         return "payemnt";
