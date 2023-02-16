@@ -46,7 +46,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article, aside, figcaption, figure, footer, header, hgroup, main,  section {
   display: block; }
 
 body {
@@ -8370,3 +8370,4 @@ textarea.form-control {
   display: none;
   font-size: 16px;
   font-weight: 500; }
+
