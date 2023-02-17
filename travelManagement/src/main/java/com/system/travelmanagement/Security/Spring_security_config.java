@@ -35,6 +35,8 @@ public class Spring_security_config {
                 .authorizeHttpRequests()
                 .requestMatchers("/user/**","/forgotpassword/**","/changepassword/**","/book/**","/contact/**")
                 .permitAll()
+                .requestMatchers("/admin/**")
+              .hasAuthority("Admin")
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -43,6 +45,7 @@ public class Spring_security_config {
                 .defaultSuccessUrl("/user/index",true)
                 .usernameParameter("email")
                 .permitAll()
+
                 .and()
                 .httpBasic();
 

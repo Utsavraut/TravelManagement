@@ -5,11 +5,14 @@ import com.system.travelmanagement.Pojo.UserPojo;
 import com.system.travelmanagement.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.Collection;
 import java.util.List;
 
 @Controller
@@ -31,27 +34,21 @@ public class UserController {
     }
 
     @GetMapping("/index")
-    public String indexPage(Model model, Principal principal){
+    public String indexPage(Model model, Principal principal, Authentication authentication){
+        if (authentication!=null){
+            Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+            for (GrantedAuthority grantedAuthority : authorities) {
+                if (grantedAuthority.getAuthority().equals("Admin")) {
+                    return "redirect:/admin/adminp";
+                }
+            }
+        }
         model.addAttribute("userdata",userService.findByEmail(principal.getName()));
         return "index";
     }
 
-    @GetMapping("/userss")
-    public String GetRevs(Model model) {
-        List<User> users = userService.fetchAll();
-        model.addAttribute("userlist", users);
-        return "users";
-    }
-    @GetMapping("/delete/{id}")
-    public String DelUser(@PathVariable("id")Integer id){
-        userService.deletebyid(id);
 
-        return "redirect:/user/userss";
-    }
-    @GetMapping("/admin")
-    public String adminPage(){
-        return "admin";
-    }
+
 
     @GetMapping("/forgotpassword")
     public String forgotpassword(Model model){

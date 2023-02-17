@@ -1,5 +1,6 @@
 package com.system.travelmanagement.service.impl;
 import com.system.travelmanagement.Entity.Book;
+import com.system.travelmanagement.Entity.User;
 import com.system.travelmanagement.Pojo.BookPojo;
 import com.system.travelmanagement.Repo.BookRepo;
 import com.system.travelmanagement.Repo.DestinationRepo;
@@ -8,6 +9,7 @@ import com.system.travelmanagement.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -21,13 +23,14 @@ private final BookRepo bookRepo;
 
 
     @Override
-    public String save(BookPojo bookPojo) {
+    public String save(BookPojo bookPojo) throws IOException{
         Book book=new Book();
+        book.setId(bookPojo.getId());
         book.setCheckin(bookPojo.getCheckin());
         book.setCheckout(bookPojo.getCheckout());
         book.setPeople(bookPojo.getPeople());
         book.setUserId(userRepo.findById(bookPojo.getUserId()).orElseThrow());
-        book.setDestId(destinationRepo.findById(bookPojo.getRoomId()).orElseThrow());
+        book.setDestId(destinationRepo.findById(bookPojo.getDestId()).orElseThrow());
         bookRepo.save(book);
         return "Created";
     }
@@ -62,6 +65,17 @@ private final BookRepo bookRepo;
     }
     @Override
     public Book fetchById(Integer id) {
-        return bookRepo.findById(id).orElseThrow(() -> new RuntimeException("Couldnot find"));
+        Book book=bookRepo.findById(id).orElseThrow(()->
+                new RuntimeException("notfound"));
+        book=Book.builder().checkout(book.getCheckin())
+                .id(book.getId())
+                .checkin(book.getCheckin())
+                .checkout(book.getCheckout())
+                .People(book.getPeople())
+                .userId(book.getUserId())
+                .destId(book.getDestId())
+                .build();
+        return book;
+
     }
 }

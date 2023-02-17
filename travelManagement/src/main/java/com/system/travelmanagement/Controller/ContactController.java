@@ -30,10 +30,5 @@ public class ContactController {
         return "redirect:/contact/cont";
     }
 
-    @GetMapping("/conlis")
-    public String GetRevs(Model model) {
-        List<Contact> contact = contactService.fetchAll();
-        model.addAttribute("contactlist", contact);
-        return "contactlist";
-    }
+
 }

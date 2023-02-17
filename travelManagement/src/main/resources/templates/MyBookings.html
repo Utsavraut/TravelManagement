@@ -41,7 +41,7 @@
         <td th:text="${mybook.destId.price}"></td>
         <td>
           <a><button class="del-btn">Delete</button></a>
-          <a><button class="del-btn">Edit</button></a>
+          <a th:href="@{~/book/products/}+${mybook.id}"><button class="del-btn">Edit</button></a>
 
         </td>
       </tr>

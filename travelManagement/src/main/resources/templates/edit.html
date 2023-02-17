@@ -33,7 +33,7 @@
         <label for="file">Image:</label>
         <input type="file" id="file" name="file" th:field="*{image}" th:value="${clickeddest.getImage()}" >
       </div>
-      <a th:href="@{~/dest/edit}+${clickeddest.id}"><button type="submit">Edit</button></a>
+      <a th:href="@{~/admin/edit}+${clickeddest.id}"><button type="submit">Edit</button></a>
     </form>
 
   </main>

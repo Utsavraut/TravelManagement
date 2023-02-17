@@ -26,15 +26,7 @@ import java.util.Map;
 
 public class DestinationController {
     private final Adddestination adddestination;
-    @GetMapping("/add")
-    public String addPage(Model model){
-        model.addAttribute("desti",new DestinationPojo());
-        return "add";
-    }
-    @GetMapping("/gal")
-    public String gallery(){
-        return "gallery";
-    }
+
     @PostMapping("/saveDest")
     public String saveDest(DestinationPojo destinationPojo, BindingResult bindingResult, RedirectAttributes redirectAttributes) throws IOException {
         Map<String, String> requestError = validateRequest(bindingResult);
@@ -44,7 +36,7 @@ public class DestinationController {
         }
         adddestination.saveDestination(destinationPojo);
         redirectAttributes.addFlashAttribute("successMsg", "User saved successfully");
-        return "redirect:/dest/add";
+        return "redirect:/admin/add";
     }
     public Map<String, String> validateRequest(BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
@@ -66,29 +58,9 @@ public class DestinationController {
         return  "destination";
     }
 
-    @GetMapping("/destlist")
-    public String GetDestiList(Model model){
-        List<Destination> destinations = adddestination.fetchAll();
-        model.addAttribute("destis", destinations);
-        return  "destinationlist";
-    }
 
-    @GetMapping("/delete/{id}")
-    public String DelUser(@PathVariable("id")Integer id){
-        adddestination.deletebyid(id);
-        return "redirect:/dest/destlist";
-    }
-    @GetMapping("/edit/{id}")
-    public String editDest(@PathVariable("id") Integer id, Model model){
-        Destination destination = adddestination.fetchById(id);
-        model.addAttribute("clickedddest", new DestinationPojo(destination));
-        return "redirect:/dest/destlist";
-    }
-    @GetMapping("/products/{id}")
-    public String getDestProgile(@PathVariable("id") Integer id, Model model ){
-        Destination destination = adddestination.fetchById(id);
-        model.addAttribute("destinations", new DestinationPojo(destination));
-        model.addAttribute("clickeddest", destination);
-        return "edit";
-    }
+
+
+
+
 }

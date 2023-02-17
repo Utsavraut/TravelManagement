@@ -25,23 +25,23 @@
       </div>
     </div>
     <div class="sidebar">
-      <a th:href="@{~/user/admin}" >
+      <a th:href="@{~/admin/adminp}" >
         <span class="material-icons-sharp">dashboard</span>
         <h3>Dashboard</h3>
       </a>
-      <a th:href="@{~/user/userss}" >
+      <a th:href="@{~/admin/userss}">
         <span class="material-icons-sharp">person_outline</span>
         <h3>Users</h3>
       </a>
-      <a th:href="@{~/book/boook}" >
+      <a th:href="@{~/admin/boook}" >
         <span class="material-icons-sharp">receipt_long</span>
         <h3>Bookings</h3>
       </a>
-      <a th:href="@{~/dest/add}">
+      <a th:href="@{~/admin/add}">
         <span class="material-icons-sharp">add</span>
         <h3>Add Destination</h3>
       </a>
-      <a th:href="@{~/dest/destlist}" class="active">
+      <a th:href="@{~/admin/destlist}" class="active">
         <span class="material-icons-sharp">list_alt</span>
         <h3>Destination List</h3>
       </a>
@@ -49,11 +49,11 @@
         <span class="material-icons-sharp">reviews</span>
         <h3>Reviews</h3>
       </a>
-      <a th:href="@{~/contact/conlis}" >
+      <a th:href="@{~/admin/conlis}" >
         <span class="material-icons-sharp">contacts</span>
         <h3>Contacts</h3>
       </a>
-      <a href="">
+      <a th:href="@{~/logout}">
         <span class="material-icons-sharp">logout</span>
         <h3>Logout</h3>
       </a>
@@ -81,8 +81,8 @@
           <td th:text="${des.price}"></td>
 
           <td>
-            <a th:href="@{~/dest/delete/}+${des.id}"><button class="del-btn">Delete</button></a>
-            <a th:href="@{~/dest/products/}+${des.id}"><button class="del-btn" >Edit</button></a>
+            <a th:href="@{~/admin/deletes/}+${des.id}"><button class="del-btn">Delete</button></a>
+            <a th:href="@{~/admin/productss/}+${des.id}"><button class="del-btn" >Edit</button></a>
 
           </td>
         </tr>

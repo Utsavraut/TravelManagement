@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 @Builder
@@ -32,26 +34,10 @@ public class BookingController {
         return "form";
     }
     @PostMapping("/savebook")
-    public String bookDesti(@Valid BookPojo bookingPojo) {
-        bookService.save(bookingPojo);
+    public String bookDesti(@Valid BookPojo bookingPojo) throws IOException {
+       bookService.save(bookingPojo);
         return "redirect:/book/pay";
     }
-    @GetMapping("/boook")
-    public String GetRevs(Model model) {
-        List<Book> book = bookService.fetchAll();
-        model.addAttribute("booklist", book.stream().map(books->
-        Book.builder()
-                .id(books.getId())
-                .checkin(books.getCheckin())
-                .checkout(books.getCheckout())
-                .People(books.getPeople())
-                .userId(books.getUserId())
-                .destId(books.getDestId())
-                .build()
-        ));
-        return "bookinglist";
-    }
-
     @GetMapping("/booked/{id}")
     public String fetchAllbook(@PathVariable("id") Integer id, Model model , Principal principal){
         List<Book> booking= bookService.findBookingById(id);
@@ -59,6 +45,19 @@ public class BookingController {
         model.addAttribute("userdata",userService.findByEmail(principal.getName()));
 
         return "MyBookings";
+    }
+    @GetMapping("/editbook/{id}")
+    public String editBooking(@PathVariable("id") Integer id, Model model){
+        Book book = bookService.fetchById(id);
+        model.addAttribute("clickeddbook", new BookPojo(book));
+        return "redirect:/dest/dest";
+    }
+    @GetMapping("/products/{id}")
+    public String getmybook(@PathVariable("id") Integer id, Model model ){
+        Book book = bookService.fetchById(id);
+        model.addAttribute("booking", new BookPojo(book));
+        model.addAttribute("clickedbook", book);
+        return "editbooking";
     }
     @GetMapping("/pay")
     public String payment(){
