@@ -1,6 +1,7 @@
 package com.system.travelmanagement.Controller;
 
 import com.system.travelmanagement.Entity.User;
+import com.system.travelmanagement.Pojo.ContactPojo;
 import com.system.travelmanagement.Pojo.UserPojo;
 import com.system.travelmanagement.service.UserService;
 import jakarta.validation.Valid;
@@ -63,5 +64,11 @@ public class UserController {
         model.addAttribute("message","Your new password has been sent to your email Please " +
                 "check your inbox" );
         return "redirect:/home";
+    }
+
+    @GetMapping("/land")
+    public String adminPage(){
+
+        return "Landing";
     }
 }
