@@ -22,7 +22,7 @@ header{
 }
 header nav{
 
-    width: 95%;
+    width: 100%;
     height: 8%;
     /* border: 1px solid #000; */
     margin: auto;
@@ -36,11 +36,17 @@ header nav ul{
     list-style: none;
     display: flex;
     margin-right: 70px;
+    /*border: 2px solid red;*/
     
 }
 
 header nav ul li{
    padding:3px 15px;
+    /*border: 2px solid green;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 
@@ -66,7 +72,35 @@ header nav ul li a:hover{
 header nav .bi-three-dots{
     display: none;
 }
+/* Style the dropdown content */
+.user-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+.user-dropdown a{
+    cursor: pointer;
+}
+    /* Show the dropdown content on hover */
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
 
+/* Style the dropdown inner content */
+.dropdown-inner {
+    background-color: white;
+    padding: 10px;
+    white-space: normal;
+    width: 100px;
+    margin-top: 100px;
+}
+
+/* Make the li tag appear in two lines */
+.user-dropdown a {
+    display: block;
+    white-space: normal;
+    text-align: center;
+}
 header .content{
     position: relative;
     width: 100%;
