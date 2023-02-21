@@ -67,8 +67,7 @@ public class UserController {
     }
 
     @GetMapping("/land")
-    public String adminPage(){
-
+    public String landingPage(){
         return "Landing";
     }
 }

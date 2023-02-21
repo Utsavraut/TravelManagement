@@ -17,10 +17,10 @@
 }
 
 @media screen and (max-width:1250px){
-   header{
-    width: 90%;
-   }
-   .offers{
+    header{
+        width: 90%;
+    }
+    .offers{
         width: 82%;
     }
     .destination{
@@ -30,7 +30,7 @@
 
 @media screen and (max-width:1100px){
     header{
-     width: 95%;
+        width: 95%;
     }
     header .trip_bx .search_bx{
         width: 70%;
@@ -39,31 +39,31 @@
         overflow: auto;
     }
     header .trip_bx .travel_bx .cards .card{
-            min-width: 220px;
-            margin-right: 10px;
+        min-width: 220px;
+        margin-right: 10px;
     }
-     .offers{
-         width: 95%;
-     }
-     .destination{
-         width: 60%;
-     }
- }
+    .offers{
+        width: 95%;
+    }
+    .destination{
+        width: 60%;
+    }
+}
 
- @media screen and (max-width:950px){
+@media screen and (max-width:950px){
 
     header .trip_bx .search_bx{
         width: 85%;
     }
     header .trip_bx .search_bx .card{
-       margin-right: 8px;
+        margin-right: 8px;
     }
     .destination{
         width: 75%;
     }
- }
+}
 
- @media screen and (max-width:712px){
+@media screen and (max-width:712px){
     header{
         width: 100%;
     }
@@ -95,10 +95,10 @@
     header nav ul li{
         padding: 8px 0px;
         text-align: center;
-    } 
+    }
 
     header nav .bi-three-dots{
-       display: unset; 
+        display: unset;
     }
 
     header .trip_bx .search_bx{
@@ -106,7 +106,7 @@
     }
     .offers{
         width: 68%;
-        
+
     }
     .destination .img_bx .msg:nth-child(2) {
         top: 15%;
@@ -118,12 +118,12 @@
         height: 350px;
         border-radius: 5px;
     }
- }
+}
 
- @media screen and (max-width:650px){
+@media screen and (max-width:650px){
     header .trip_bx .search_bx .card{
         width: 140px;
-        
+
     }
 
     header .trip_bx .search_bx input[type="button"]{
@@ -149,9 +149,9 @@
     .destination .des_bx{
         margin-top: 30px;
     }
- }
+}
 
- @media screen and (max-width:541px){
+@media screen and (max-width:541px){
     header .content .cont_bx{
         width: 85%;
     }
@@ -171,7 +171,7 @@
         width: 110px;
     }
     header .trip_bx .search_bx .card input{
-        width: 100%;  
+        width: 100%;
     }
     .offers h1{
         font-size: 22px;
@@ -188,9 +188,9 @@
     footer ul li h6{
         font-size: 8px;
     }
- }
+}
 
- @media screen and (max-width:411px){
+@media screen and (max-width:411px){
     .offers{
         margin-top: 80px;
     }
@@ -212,10 +212,10 @@
     footer ui li{
         margin-right: 20px;
     }
- }
+}
 
- @media screen and (max-width:375px){
+@media screen and (max-width:375px){
     .offers{
         margin-top: 15px;
     }
- }
+}

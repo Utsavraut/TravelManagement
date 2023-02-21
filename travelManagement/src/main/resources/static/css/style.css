@@ -6,13 +6,13 @@ html{
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #afafaf31;
-    overflow-x: hidden;
+    overflow-x:hidden;
 }
- nav .logo img{
+nav .logo img{
     width: 60px;
     height: 60px;
-   margin-top: 0px;
-   margin-right: 40px;
+    margin-top: 0px;
+    margin-right: 40px;
 }
 header{
     width: 80%;
@@ -22,56 +22,43 @@ header{
 }
 header nav{
 
-    width: 100%;
+    width: 95%;
     height: 8%;
     /* border: 1px solid #000; */
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
 header nav ul{
     list-style: none;
     display: flex;
     margin-right: 70px;
-    /*border: 2px solid red;*/
-    
+
 }
 
 header nav ul li{
-   padding:3px 15px;
-    /*border: 2px solid green;*/
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    padding:3px 15px;
+
+
+}
+
+/* header nav ul li:nth-last-child(1){
+   background: #000;
+   border-radius: 20px;
+   padding: 5px 20px;
+
+ } */
+
+header nav ul li:nth-last-child(1) a{
+    color: rgb(0, 0, 0);
 
 }
 
 
- header nav ul li:nth-last-child(1) a{
-   color: rgb(0, 0, 0);
-  }
 
-header nav ul li a{
-    text-decoration: none;
-    color:#121213 ;
-    font-size: 13px;
-    font-weight: 500;
-    transition: .3s linear ;
-    cursor: pointer;
-}
-header nav ul li i{
-    cursor: pointer;
-}
-header nav ul li a:hover{
-    color: rgb(102, 78, 78);
-}
-
-header nav .bi-three-dots{
-    display: none;
-}
 /* Style the dropdown content */
 .user-dropdown .dropdown-content {
     display: none;
@@ -81,7 +68,7 @@ header nav .bi-three-dots{
 .user-dropdown a{
     cursor: pointer;
 }
-    /* Show the dropdown content on hover */
+/* Show the dropdown content on hover */
 .user-dropdown:hover .dropdown-content {
     display: block;
 }
@@ -101,6 +88,23 @@ header nav .bi-three-dots{
     white-space: normal;
     text-align: center;
 }
+
+header nav ul li a{
+    text-decoration: none;
+    color:#121213 ;
+    font-size: 13px;
+    font-weight: 500;
+    transition: .3s linear ;
+}
+
+header nav ul li a:hover{
+    color: rgb(102, 78, 78);
+}
+
+header nav .bi-three-dots{
+    display: none;
+}
+
 header .content{
     position: relative;
     width: 100%;
@@ -132,10 +136,10 @@ header .content .cont_bx h1{
 }
 
 header .content .cont_bx h1 p{
-  font-size: 14px;
-  font-weight: 400;
-  color: rgb(241,241,241);
-  
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(241,241,241);
+
 }
 
 header .content .cont_bx button{
@@ -151,8 +155,8 @@ header .content .cont_bx button{
 }
 
 header .content .cont_bx button:hover{
-   background: rgb(113,113,113);
-   border: 2px solid rgb(113,113,113);
+    background: rgb(113,113,113);
+    border: 2px solid rgb(113,113,113);
 }
 
 header .trip_bx{
@@ -191,7 +195,7 @@ header .trip_bx .search_bx .card h4{
     font-weight: 700;
 }
 header .trip_bx .search_bx .card h4 .bi{
-   position: absolute;
+    position: absolute;
     font-size: 13px;
     margin:3px 0px 0px 5px;
     transition: .3s linear;
@@ -206,21 +210,21 @@ header .trip_bx .search_bx .card input{
 }
 
 header .trip_bx .search_bx input[type="button"]{
-   background: #000;
-   color: #fff;
-   border: none;
-   outline: none;
-   padding: 10px 20px;
-   border-radius: 20px;
-   transition: .3s linear;
-   cursor: pointer;
+    background: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: .3s linear;
+    cursor: pointer;
 }
 
 header .trip_bx .search_bx input[type="button"]:hover{
     background: gray;
- }
+}
 
- header .trip_bx .travel_bx{
+header .trip_bx .travel_bx{
     position: relative;
     width: 100%;
     height: auto;
@@ -230,31 +234,31 @@ header .trip_bx .search_bx input[type="button"]:hover{
     /* border: 1px solid #000; */
     border-radius: 10px;
     padding-bottom:20px;
-    box-shadow: 0px 20px 25px -10px rgb(165, 165, 165); 
- }
- header .trip_bx .travel_bx::before{
-  content: " ";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  background: rgb(241,241,241, .7);
-  backdrop-filter: blur(5px);
-  z-index: -1;
- }
+    box-shadow: 0px 20px 25px -10px rgb(165, 165, 165);
+}
+header .trip_bx .travel_bx::before{
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: rgb(241,241,241, .7);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
 
- header .trip_bx .travel_bx h4{
- margin: 0%;
- padding: 60px 0px 15px 1.7%;
- }
+header .trip_bx .travel_bx h4{
+    margin: 0%;
+    padding: 60px 0px 15px 1.7%;
+}
 header .trip_bx .travel_bx .cards{
-width: 96%;
-height: auto;
-margin: 0px auto;
-/* border: 1px solid #000; */
-display: flex;
-align-items: center;
-justify-content: space-between ;
+    width: 96%;
+    height: auto;
+    margin: 0px auto;
+    /* border: 1px solid #000; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
 }
 
 header .trip_bx .travel_bx .cards .card{
@@ -264,41 +268,41 @@ header .trip_bx .travel_bx .cards .card{
 
 }
 header .trip_bx .travel_bx .cards .card h3{
-  margin: 0px 0px 10px 0px;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 600;
+    margin: 0px 0px 10px 0px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
 }
 header .trip_bx .travel_bx .cards .card h3 img{
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
 
-  }
+}
 
 header .trip_bx .travel_bx .cards .card  img{
     width: 100%;
     height: 50%;
 
- }
+}
 
- header .trip_bx .travel_bx .cards .card .btn_city{
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   /* border:1px solid #000;  */
- }
+header .trip_bx .travel_bx .cards .card .btn_city{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border:1px solid #000;  */
+}
 
- header .trip_bx .travel_bx .cards .card .btn_city a{
-   text-decoration: none;
-   background: #000;
-   color: #fff;
-   border-radius: 20px;
-   padding: 6px 20px;
-   font-size: 11px;
-   transition: .3s linear;
-  }
+header .trip_bx .travel_bx .cards .card .btn_city a{
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 11px;
+    transition: .3s linear;
+}
 
 header .trip_bx .travel_bx .cards .card .btn_city a:hover{
     background: gray;
@@ -314,7 +318,7 @@ header .trip_bx .travel_bx .cards .card .btn_city h5{
 
 header .trip_bx .travel_bx .cards .card .btn_city h5 span{
     font-size: 13px;
-    font-weight: 700; 
+    font-weight: 700;
 }
 
 
@@ -330,47 +334,47 @@ header .trip_bx .travel_bx .cards .card .btn_city h5 span{
     /* flex-wrap: wrap; */
     /* border: 2px solid black; */
     gap: 10px;
-  }
+}
 
-  .about .heading{
+.about .heading{
     font-size: 30px;
     margin-top: 60px;
     text-align: center;
-  }
-  .about .whole .img-container {
+}
+.about .whole .img-container {
     flex: 1 1 40rem;
     position: relative;
     height: 50%;
 
-  }
-  .about .whole .img-container img {
+}
+.about .whole .img-container img {
     width: 50%;
     height: 100%;
 
-    
-   
+
+
     box-shadow: 0.5rem 1rem var(--shadow);
     margin-left: 40%;
     /* object-fit: cover; */
     border-radius: 0.5rem;
-  }
-  
-  .about .whole .description {
+}
+
+.about .whole .description {
     flex: 1 1 40rem;
     /* border: 2px solid rgb(10, 231, 117); */
     margin-right: 200px;
-  }
-  .about .whole .description h3 {
+}
+.about .whole .description h3 {
     font-size:25px;
     color: var(--secondary);
-  }
-  .about .whole .description p {
+}
+.about .whole .description p {
     font-size: 12px;
     padding: 0.5rem 0;
     line-height: 1.5;
     padding-top: 1rem;
     color: var(--light);
-  }
+}
 .destination{
     width: 45%;
     height: auto;
@@ -407,8 +411,8 @@ header .trip_bx .travel_bx .cards .card .btn_city h5 span{
     font-weight: 500;
     line-height: 22px;
 }
-  
-.destination .des_bx h6{ 
+
+.destination .des_bx h6{
     width: 250px;
     font-size: 12px;
     font-weight: 500;
@@ -442,23 +446,23 @@ header .trip_bx .travel_bx .cards .card .btn_city h5 span{
 }
 
 .destination .img_bx .msg{
-  position: absolute; 
-  top: 50%; 
-  left: -10%;
-  width: 200px;
-  height: 50px;
-  background: #fff;
-  box-shadow: 0px 5px 20px gray;
-  display: flex;
-  align-items: center;
-  padding: 0px 10px;
-  border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 200px;
+    height: 50px;
+    background: #fff;
+    box-shadow: 0px 5px 20px gray;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    border-radius: 5px;
 }
 
 .destination .img_bx .msg:nth-child(2){
-top: 15%;
-left: 77%;
-  }
+    top: 15%;
+    left: 77%;
+}
 
 .destination .img_bx .msg img{
     width: 30px;
@@ -466,7 +470,7 @@ left: 77%;
 }
 
 .destination .img_bx .msg .cont{
-   margin-left: 15px;
+    margin-left: 15px;
 }
 
 .destination .img_bx .msg .cont h4{
@@ -476,22 +480,24 @@ left: 77%;
 }
 
 .destination .img_bx .msg .cont .bi:nth-child(1){
- color: red;
- margin-right: 5px;
- font-size: 13px;
+    color: red;
+    margin-right: 5px;
+    font-size: 13px;
 }
 .destination .img_bx .msg .cont .bi span{
-font-style: normal;
-margin-left: 3px;
-font-size: 12px;
-color: gray;
+    font-style: normal;
+    margin-left: 3px;
+    font-size: 12px;
+    color: gray;
 }
 
 .destination .img_bx .msg .cont .bi:nth-child(2){
     color: rgb(19, 180, 195);
     margin-right: 5px;
     font-size: 13px;
-   }
+}
+
+
 .footer{
     bottom: 0;
     background:#000;
@@ -537,8 +543,6 @@ color: gray;
     .footer{
         text-align:left;
         padding:5%;
-        width: auto;
-        margin-top: 5px;
     }
     .footer .row ul li{
         display:block;

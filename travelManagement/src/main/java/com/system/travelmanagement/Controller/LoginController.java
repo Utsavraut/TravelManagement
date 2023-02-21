@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
     private final UserService userService;
 
-    @GetMapping("/login")
+    @GetMapping( "/login")
     public String showLoginPage() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
@@ -29,6 +29,6 @@ public class LoginController {
         if (authentication.isAuthenticated()) {
             SecurityContextHolder.clearContext();
         }
-        return "redirect:/login";
+        return "redirect:user/land";
     }
 }
